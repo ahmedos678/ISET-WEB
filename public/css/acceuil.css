@@ -1,0 +1,35 @@
+h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #333; /* Dark text color */
+    font-family: "Arial", sans-serif;
+    margin: 5px; /* Remove default margin */
+    padding: 10px;
+}
+
+/* Icon inside the header */
+h1 svg {
+    margin-right: 10px; /* Space between icon and text */
+    fill: #5f6368; /* Icon color */
+    transition: fill 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Text inside the header */
+h1 span {
+    font-weight: bold;
+    color: #333; /* Text color */
+}
+
+main {
+    padding: min(30px, 7%);
+}
+main p {
+    color: var(--secondary-text-clr);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.container {
+    background-color: #1a2d53d4;
+}

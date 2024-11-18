@@ -1,0 +1,69 @@
+/* Basic styling for dropdown items */
+.navbar .dropdown-menu div[class*="col"] {
+    margin-bottom: 1rem;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    background-color: #0060c8 !important;
+}
+
+/* Responsive breakpoints */
+@media screen and (min-width: 992px) {
+
+    /* Remove padding to ensure the dropdown hover state is not broken */
+    .navbar {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    /* Margin and padding adjustments for navbar items */
+    .navbar .nav-item {
+        padding: .5rem .5rem;
+        margin: 0 .25rem;
+    }
+
+    /* Make dropdown full width */
+    .navbar .dropdown {
+        position: static;
+    }
+
+    /* Dropdown menu default styling */
+    .navbar .dropdown-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 45px;
+
+        /* Initially off-screen (hidden) */
+        transform: translateY(-20px);  /* Start above the menu item */
+        opacity: 0;                    /* Initially invisible */
+        display: none;                 /* Fully hide it */
+        transition: transform 0.3s ease, opacity 0.3s ease, display 0s 0.3s;
+        border: 1px solid rgba(0, 0, 0, .15);
+        background-color: #fff;
+    }
+
+    /* Show and animate dropdown when hovered */
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;                 /* Show the dropdown */
+        visibility: visible;            /* Ensure it's visible */
+        opacity: 1;                     /* Fade in */
+        transform: translateY(0);       /* Slide down */
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s;
+        margin-top: 15px;
+    }
+
+    /* Ensure smooth hiding when moving out of the hover state */
+    .navbar .dropdown:not(:hover) .dropdown-menu {
+        display: none;                 /* Hide it */
+        opacity: 0;                    /* Fade out */
+        transform: translateY(-20px);  /* Slide up */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Ensure smooth transition without any flicker or overlap */
+    .navbar .dropdown-menu {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+}
